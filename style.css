@@ -1,21 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-* {
-    margin:0; padding:0; box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
-}
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
 
 body {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
     background: linear-gradient(135deg, #ffe0f0, #ffc0df);
     color:#1e293b;
     padding:20px;
+    min-height:100vh;
 }
 
-.container { max-width:450px; width:100%; }
+/* Container */
+.container { max-width:450px; margin:0 auto; }
 
 /* Login Box */
 .login-box {
@@ -25,16 +20,12 @@ body {
     box-shadow:0 8px 30px rgba(0,0,0,0.2);
     text-align:center;
 }
-.login-box h2 {
-    font-size:2em;
-    color:#fff;
-    margin-bottom:30px;
-}
+.login-box h2 { font-size:2em; color:#fff; margin-bottom:30px; }
 .input-box { position:relative; margin:20px 0; }
 .input-box input {
     width:100%; height:50px; background:transparent;
-    border:2px solid #ffb6c1; outline:none; border-radius:40px;
-    font-size:1em; color:#fff; padding:0 20px; transition:.5s ease;
+    border:2px solid #ffb6c1; border-radius:40px; font-size:1em; color:#fff;
+    padding:0 20px; transition:.5s ease; outline:none;
 }
 .input-box input:focus, .input-box input:valid { border-color:#fff; }
 .input-box label {
@@ -50,17 +41,11 @@ body {
     color:#fff; font-weight:600; cursor:pointer; font-size:1em; transition:.3s;
 }
 .btn:hover { transform:scale(1.05); }
+#errorMsg { color:#ff0000; font-weight:600; margin-top:10px; display:none; }
 
-/* ข้อความรหัสผิด */
-#errorMsg {
-    color:#ff0000;
-    font-weight:600;
-    margin-top:10px;
-    display:none;
-}
-
-/* Timeline */
-#timeline { display:none; margin-top:20px; }
+/* Timeline / Tabs */
+.tab-content { display:none; margin-bottom:60px; }
+.tab-content.active { display:block; }
 h1.timeline-title {
     text-align:center; font-size:36px; margin-bottom:30px;
     background: linear-gradient(90deg,#ff69b4,#ff1493);
@@ -70,36 +55,38 @@ h1.timeline-title::after { content:" ❤️"; font-size:32px; vertical-align:mid
 
 .year {
     font-size:22px; font-weight:bold;
-    background: linear-gradient(90deg,#ff69b4,#ff1493);
+    background: linear-gradient(90deg,#ffb6c1,#ff69b4);
     color:#fff; padding:14px 20px; border-radius:12px; margin:20px auto 10px;
     max-width:500px; text-align:center; cursor:pointer; box-shadow:0 4px 15px rgba(0,0,0,0.1);
     transition:.3s;
 }
 .year:hover { background: linear-gradient(90deg,#ff85c1,#ff3ca0); transform:scale(1.02); }
 
-.events { max-width:500px; margin:10px auto 30px; display:none; }
-
-/* Event แบบแถวเดียว */
+.events { max-width:500px; margin:10px auto 30px; display:block; }
 .event {
-    background:#fff;
-    border-left:6px solid #ff69b4;
+    background:#fff; border-left:6px solid #ff69b4;
     padding:14px 20px; margin:10px 0;
     border-radius:18px; box-shadow:0 6px 20px rgba(0,0,0,0.08);
-    cursor:pointer; font-size:15px;
-    display:flex; align-items:center; transition:.3s;
+    display:flex; align-items:center; font-size:15px; transition:.3s;
 }
 .event:hover { transform:translateX(5px) scale(1.02); background:#ffe4f0; }
 .date { font-weight:bold; margin-right:10px; font-size:14px; }
-.note { font-size:13px; color:#475569; display:none; margin-left:10px; }
-/* แทนที่ .event.active .note */
-.note {
-    display:block; /* ให้โชว์ตลอด */
-    font-size:13px;
-    color:#475569;
-    margin-left:10px;
-}
+.note { display:block; font-size:13px; color:#475569; margin-left:10px; }
 
-
-/* สีพิเศษ */
+/* Event สีพิเศษ */
 .delayed { border-left:6px solid #facc15; }
 .issue { border-left:6px solid #f87171; }
+
+/* Tab Bar */
+.tab-bar {
+    position: fixed; bottom: 0; left: 0; width: 100%;
+    display:flex; background:#fff; box-shadow:0 -2px 10px rgba(0,0,0,0.1);
+    display:none; /* ซ่อนก่อน Login */
+}
+.tab-bar .tab-btn {
+    flex: 1; padding:12px 0; border:none; background:none;
+    font-size:16px; cursor:pointer; transition:0.3s;
+}
+.tab-bar .tab-btn.active {
+    color:#ff1493; font-weight:bold; border-top:3px solid #ff1493;
+}
