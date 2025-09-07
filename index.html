@@ -5,59 +5,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aonbook</title>
 <link rel="stylesheet" href="style.css">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Font Awesome สำหรับไอคอน -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
 
 <div class="container">
-
-    <!-- Login -->
+    <!-- Login Box -->
     <div class="login-box" id="loginBox">
         <h2>เข้าสู่ระบบ</h2>
         <div class="input-box">
-            <input type="password" id="pass" required>
+            <input type="password" id="pass" placeholder=" " required>
+
             <label>รหัสผ่าน</label>
         </div>
         <button class="btn" id="loginBtn">เข้าสู่ระบบ</button>
         <div id="errorMsg"></div>
     </div>
 
-    <!-- Tabs Content -->
+    <!-- Timeline Tab -->
     <div class="tab-content" id="timeline">
         <h1 class="timeline-title">บันทึกประจำเดือน</h1>
         <div class="year">ประจำเดือน ปี 68</div>
         <div class="events">
-            <div class="event">
-                <div class="date">30/01/68</div>
-                <div class="note"></div>
+            <div class="event"><div class="date">30/01/68</div><div class="note"></div></div>
+            <div class="event"><div class="date">07/03/68</div><div class="note">มาล่าช้า ผิดปกติ</div></div>
+            <div class="event"><div class="date">12/04/68</div><div class="note"></div></div>
+            <div class="event"><div class="date">20/05/68</div><div class="note">มาล่าช้า</div></div>
+            <div class="event"><div class="date">23/06/68</div><div class="note"></div></div>
+            <div class="event"><div class="date">07/09/68</div><div class="note"></div></div>
+        </div>
+    </div>
+
+    <!-- About Tab -->
+    <div class="tab-content" id="about">
+        <h1 class="timeline-title">เกี่ยวกับเว็บ</h1>
+        <div class="about-cards">
+            <div class="card">
+                <i class="fa-solid fa-user"></i>
+                <h3>ผู้สร้างเว็บ</h3>
+                <p>สร้างโดย Mr.Thegador</p>
             </div>
-            <div class="event issue">
-                <div class="date">07/03/68</div>
-                <div class="note">มาล่าช้า ผิดปกติ</div>
+            <div class="card">
+                <i class="fa-solid fa-calendar-days"></i>
+                <h3>บันทึกประจำเดือน</h3>
+                <p>ติดตามบันทึกแต่ละเดือน พร้อมหมายเหตุสำคัญ</p>
             </div>
-            <div class="event delayed">
-                <div class="date">20/05/68</div>
-                <div class="note">มาล่าช้า</div>
+            <div class="card">
+                <i class="fa-solid fa-lock"></i>
+                <h3>ความเป็นส่วนตัว</h3>
+                <p>รหัสผ่านป้องกันไม่ให้บุคคลภายนอกเข้าดู</p>
             </div>
         </div>
     </div>
 
-    <div class="tab-content" id="about">
-        <h1 class="timeline-title">เกี่ยวกับเว็บ</h1>
-        <p>นี่คือรายละเอียดของเว็บคุณ</p>
-    </div>
-
+    <!-- Settings Tab -->
     <div class="tab-content" id="settings">
         <h1 class="timeline-title">ตั้งค่า</h1>
-        <p>ตัวเลือกต่าง ๆ สำหรับผู้ใช้</p>
-    </div>
+        <div class="settings-option">
+            <label class="switch">
+                <input type="checkbox" id="darkMode">
+                <span class="slider"></span>
+            </label>
+            <span>โหมดมืด (Dark Mode)</span>
+        </div>
 
+
+    </div>
 </div>
 
-<!-- Tab Bar (ซ่อนตอนแรก) -->
+<!-- Tab Bar -->
 <div class="tab-bar" id="tabBar">
-    <button class="tab-btn active" data-tab="timeline">Timeline</button>
-    <button class="tab-btn" data-tab="about">About</button>
-    <button class="tab-btn" data-tab="settings">Settings</button>
+    <button class="tab-btn active" data-tab="timeline"><i class="fas fa-calendar-alt"></i>Timeline</button>
+    <button class="tab-btn" data-tab="about"><i class="fas fa-info-circle"></i>About</button>
+    <button class="tab-btn" data-tab="settings"><i class="fas fa-cog"></i>Settings</button>
 </div>
 
 <script src="script.js"></script>
