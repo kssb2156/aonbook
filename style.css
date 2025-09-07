@@ -79,15 +79,16 @@ h1.timeline-title::after { content:" ❤️"; font-size:32px; vertical-align:mid
 
 .events { max-width:500px; margin:10px auto 30px; display:none; }
 
+/* Event แบบแถวเดียว */
 .event {
-    position:relative; padding:14px 20px; margin:10px 0;
+    background:#fff;
+    border-left:6px solid #ff69b4;
+    padding:14px 20px; margin:10px 0;
     border-radius:18px; box-shadow:0 6px 20px rgba(0,0,0,0.08);
-    cursor:pointer; max-width:85%; font-size:15px;
+    cursor:pointer; font-size:15px;
     display:flex; align-items:center; transition:.3s;
 }
-.event:hover { transform:translateY(-2px) scale(1.02); background:#ffe4f0; }
-.bubble-left { background:#fff; border-left:6px solid #ff69b4; margin-right:auto; }
-.bubble-right { background:#ff69b4; color:#fff; margin-left:auto; }
+.event:hover { transform:translateX(5px) scale(1.02); background:#ffe4f0; }
 .date { font-weight:bold; margin-right:10px; font-size:14px; }
 .note { font-size:13px; color:#475569; display:none; margin-left:10px; }
 .event.active .note { display:block; }
