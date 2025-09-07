@@ -91,7 +91,14 @@ h1.timeline-title::after { content:" ❤️"; font-size:32px; vertical-align:mid
 .event:hover { transform:translateX(5px) scale(1.02); background:#ffe4f0; }
 .date { font-weight:bold; margin-right:10px; font-size:14px; }
 .note { font-size:13px; color:#475569; display:none; margin-left:10px; }
-.event.active .note { display:block; }
+/* แทนที่ .event.active .note */
+.note {
+    display:block; /* ให้โชว์ตลอด */
+    font-size:13px;
+    color:#475569;
+    margin-left:10px;
+}
+
 
 /* สีพิเศษ */
 .delayed { border-left:6px solid #facc15; }
