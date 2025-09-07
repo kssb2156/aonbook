@@ -9,6 +9,7 @@
 <body>
 
 <div class="container">
+
     <!-- Login -->
     <div class="login-box" id="loginBox">
         <h2>เข้าสู่ระบบ</h2>
@@ -16,79 +17,49 @@
             <input type="password" id="pass" required>
             <label>รหัสผ่าน</label>
         </div>
-        <button class="btn" onclick="checkLogin()">เข้าสู่ระบบ</button>
+        <button class="btn" id="loginBtn">เข้าสู่ระบบ</button>
         <div id="errorMsg"></div>
     </div>
 
-    <!-- Timeline -->
-    <div id="timeline">
+    <!-- Tabs Content -->
+    <div class="tab-content" id="timeline">
         <h1 class="timeline-title">บันทึกประจำเดือน</h1>
-
-        <!-- ปี 2568 -->
         <div class="year">ประจำเดือน ปี 68</div>
         <div class="events">
             <div class="event">
                 <div class="date">30/01/68</div>
                 <div class="note"></div>
             </div>
-            <div class="event">
+            <div class="event issue">
                 <div class="date">07/03/68</div>
                 <div class="note">มาล่าช้า ผิดปกติ</div>
             </div>
-            <div class="event">
-                <div class="date">12/04/68</div>
-                <div class="note"></div>
-            </div>
-            <div class="event">
+            <div class="event delayed">
                 <div class="date">20/05/68</div>
                 <div class="note">มาล่าช้า</div>
             </div>
-            <div class="event">
-                <div class="date">23/06/68</div>
-                <div class="note"></div>
-            </div>
-            <div class="event">
-                <div class="date">07/09/68</div>
-                <div class="note"></div>
-            </div>
         </div>
     </div>
+
+    <div class="tab-content" id="about">
+        <h1 class="timeline-title">เกี่ยวกับเว็บ</h1>
+        <p>นี่คือรายละเอียดของเว็บคุณ</p>
+    </div>
+
+    <div class="tab-content" id="settings">
+        <h1 class="timeline-title">ตั้งค่า</h1>
+        <p>ตัวเลือกต่าง ๆ สำหรับผู้ใช้</p>
+    </div>
+
 </div>
 
-<script>
-// ตรวจสอบรหัสผ่าน
-function checkLogin() {
-    const pass = document.getElementById("pass").value;
-    const errorMsg = document.getElementById("errorMsg");
+<!-- Tab Bar (ซ่อนตอนแรก) -->
+<div class="tab-bar" id="tabBar">
+    <button class="tab-btn active" data-tab="timeline">Timeline</button>
+    <button class="tab-btn" data-tab="about">About</button>
+    <button class="tab-btn" data-tab="settings">Settings</button>
+</div>
 
-    if(pass === "2002") {
-        document.getElementById("loginBox").style.display = "none";
-        document.getElementById("timeline").style.display = "block";
-        errorMsg.style.display = "none";
-    } else {
-        errorMsg.textContent = "รหัสผ่านไม่ถูกต้อง!";
-        errorMsg.style.display = "block";
-        setTimeout(() => { errorMsg.style.display = "none"; }, 3000);
-    }
-}
-
-// Toggle เปิด/ปิดปี
-const years = document.querySelectorAll('.year');
-years.forEach(year => {
-    year.addEventListener('click', () => {
-        const events = year.nextElementSibling;
-        events.style.display = (events.style.display === "block") ? "none" : "block";
-    });
-});
-
-// Toggle แสดงหมายเหตุ
-const events = document.querySelectorAll('.event');
-events.forEach(event => {
-    event.addEventListener('click', () => {
-        event.classList.toggle('active');
-    });
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
