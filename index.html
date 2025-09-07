@@ -24,38 +24,33 @@
     <div id="timeline">
         <h1 class="timeline-title">บันทึกประจำเดือน</h1>
 
-
-
         <!-- ปี 2568 -->
         <div class="year">ประจำเดือน ปี 68</div>
         <div class="events">
-            <div class="event bubble-right delayed">
+            <div class="event">
                 <div class="date">30/01/68</div>
                 <div class="note"></div>
             </div>
-            <div class="event bubble-left">
+            <div class="event">
                 <div class="date">07/03/68</div>
                 <div class="note">มาล่าช้า ผิดปกติ</div>
             </div>
-            <div class="event bubble-right delayed">
+            <div class="event">
                 <div class="date">12/04/68</div>
                 <div class="note"></div>
             </div>
-            <div class="event bubble-left">
+            <div class="event">
                 <div class="date">20/05/68</div>
                 <div class="note">มาล่าช้า</div>
             </div>
-            <div class="event bubble-right delayed">
+            <div class="event">
                 <div class="date">23/06/68</div>
                 <div class="note"></div>
             </div>
-            <div class="event bubble-left">
+            <div class="event">
                 <div class="date">07/09/68</div>
                 <div class="note"></div>
             </div>
-
-
-
         </div>
     </div>
 </div>
@@ -73,8 +68,6 @@ function checkLogin() {
     } else {
         errorMsg.textContent = "รหัสผ่านไม่ถูกต้อง!";
         errorMsg.style.display = "block";
-
-        // ซ่อนข้อความอัตโนมัติหลัง 3 วินาที
         setTimeout(() => { errorMsg.style.display = "none"; }, 3000);
     }
 }
