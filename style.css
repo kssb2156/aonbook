@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin:0; padding:0; box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background: linear-gradient(135deg, #ffe0f0, #ffc0df);
+    color:#1e293b;
+    padding:20px;
+}
+
+.container { max-width:450px; width:100%; }
+
+/* Login Box */
+.login-box {
+    background: linear-gradient(135deg,#ffb6c1,#ff69b4);
+    padding:40px;
+    border-radius:16px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.2);
+    text-align:center;
+}
+.login-box h2 {
+    font-size:2em;
+    color:#fff;
+    margin-bottom:30px;
+}
+.input-box { position:relative; margin:20px 0; }
+.input-box input {
+    width:100%; height:50px; background:transparent;
+    border:2px solid #ffb6c1; outline:none; border-radius:40px;
+    font-size:1em; color:#fff; padding:0 20px; transition:.5s ease;
+}
+.input-box input:focus, .input-box input:valid { border-color:#fff; }
+.input-box label {
+    position:absolute; top:50%; left:20px; transform:translateY(-50%);
+    font-size:1em; color:#fff; pointer-events:none; transition:.5s ease;
+}
+.input-box input:focus ~ label, .input-box input:valid ~ label {
+    top:1px; font-size:.8em; background: linear-gradient(135deg,#ffb6c1,#ff69b4); padding:0 6px; color:#fff;
+}
+.btn {
+    width:100%; height:50px;
+    background:#ff69b4; border:none; border-radius:40px;
+    color:#fff; font-weight:600; cursor:pointer; font-size:1em; transition:.3s;
+}
+.btn:hover { transform:scale(1.05); }
+
+/* ข้อความรหัสผิด */
+#errorMsg {
+    color:#ff0000;
+    font-weight:600;
+    margin-top:10px;
+    display:none;
+}
+
+/* Timeline */
+#timeline { display:none; margin-top:20px; }
+h1.timeline-title {
+    text-align:center; font-size:36px; margin-bottom:30px;
+    background: linear-gradient(90deg,#ff69b4,#ff1493);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+h1.timeline-title::after { content:" ❤️"; font-size:32px; vertical-align:middle; }
+
+.year {
+    font-size:22px; font-weight:bold;
+    background: linear-gradient(90deg,#ff69b4,#ff1493);
+    color:#fff; padding:14px 20px; border-radius:12px; margin:20px auto 10px;
+    max-width:500px; text-align:center; cursor:pointer; box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:.3s;
+}
+.year:hover { background: linear-gradient(90deg,#ff85c1,#ff3ca0); transform:scale(1.02); }
+
+.events { max-width:500px; margin:10px auto 30px; display:none; }
+
+.event {
+    position:relative; padding:14px 20px; margin:10px 0;
+    border-radius:18px; box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    cursor:pointer; max-width:85%; font-size:15px;
+    display:flex; align-items:center; transition:.3s;
+}
+.event:hover { transform:translateY(-2px) scale(1.02); background:#ffe4f0; }
+.bubble-left { background:#fff; border-left:6px solid #ff69b4; margin-right:auto; }
+.bubble-right { background:#ff69b4; color:#fff; margin-left:auto; }
+.date { font-weight:bold; margin-right:10px; font-size:14px; }
+.note { font-size:13px; color:#475569; display:none; margin-left:10px; }
+.event.active .note { display:block; }
+
+/* สีพิเศษ */
+.delayed { border-left:6px solid #facc15; }
+.issue { border-left:6px solid #f87171; }
