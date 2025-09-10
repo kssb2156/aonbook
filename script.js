@@ -4,9 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sample period data - you'd replace this with real data from a backend or local storage
     const periodData = [
-        { start: new Date(2025, 8, 2), end: new Date(2025, 8, 8) },
-        { start: new Date(2025, 7, 5), end: new Date(2025, 7, 10) },
-        { start: new Date(2025, 6, 8), end: new Date(2025, 6, 14) }
+        { start: new Date(2025, 8, 7), end: new Date(2025, 8, 10) },
+        { start: new Date(2025, 7, 4), end: new Date(2025, 7, 9) },
+        { start: new Date(2025, 5, 23), end: new Date(2025, 5, 28) },
+        { start: new Date(2025, 4, 20), end: new Date(2025, 4, 25) },
+        { start: new Date(2025, 3, 12), end: new Date(2025, 3, 18) },
+        { start: new Date(2025, 2, 7), end: new Date(2025, 2, 12) },
+        { start: new Date(2025, 0, 30), end: new Date(2025, 1, 6) },
     ];
 
     const today = new Date();
