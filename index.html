@@ -1,44 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luna Diary</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
     <div class="app-container">
         <div class="header">
             <span class="logo">🌸 Luna Diary</span>
-            <span class="user-profile">T</span>
-        </div>
-
-        <div class="tabs">
-            <div class="tab active" onclick="showTab('calendar')">รอบเดือน</div>
-            <div class="tab" onclick="showTab('history')">ประวัติ</div>
+            <div class="user-profile">T</div>
         </div>
 
         <div id="calendar-view" class="tab-content active">
-            <div class="calendar-header">
-                <span class="nav-arrow" onclick="changeMonth(-1)">&#x2039;</span>
-                <span id="current-month-year"></span>
-                <span class="nav-arrow" onclick="changeMonth(1)">&#x203a;</span>
+            <div class="card calendar-card">
+                <div class="calendar-header">
+                    <button class="nav-button" onclick="changeMonth(-1)"><i class="material-icons">chevron_left</i></button>
+                    <span id="current-month-year" class="current-month-year"></span>
+                    <button class="nav-button" onclick="changeMonth(1)"><i class="material-icons">chevron_right</i></button>
+                </div>
+                <div class="calendar-grid-header">
+                    <div>อา</div><div>จ</div><div>อ</div><div>พ</div><div>พฤ</div><div>ศ</div><div>ส</div>
+                </div>
+                <div id="calendar-grid" class="calendar-grid"></div>
+                <div class="legend">
+                    <div class="legend-item"><span class="color-box period-color"></span> ประจำเดือน</div>
+                    <div class="legend-item"><span class="color-box end-period-color"></span> หมดประจำเดือน</div>
+                    <div class="legend-item"><span class="color-box prediction-color"></span> คาดการณ์</div>
+                </div>
             </div>
-            <div class="calendar-grid-header">
-                <div>อา</div><div>จ</div><div>อ</div><div>พ</div><div>พฤ</div><div>ศ</div><div>ส</div>
-            </div>
-            <div id="calendar-grid" class="calendar-grid"></div>
-            <div class="legend">
-                <div class="legend-item"><span class="color-box red"></span> ประจำเดือน</div>
-                <div class="legend-item"><span class="color-box green"></span> หมดประจำเดือน</div>
-                <div class="legend-item"><span class="color-box pink"></span> คาดการณ์</div>
-            </div>
-            <div id="prediction-box" class="prediction-box"></div>
+            <div id="prediction-box" class="prediction-box card"></div>
         </div>
 
         <div id="history-view" class="tab-content">
-            <div id="history-list" class="history-list"></div>
+            <div class="card history-card">
+                <div id="history-list" class="history-list"></div>
+            </div>
+        </div>
+
+        <div class="bottom-tabs">
+            <div class="tab-item active" onclick="showTab('calendar')">
+                <i class="material-icons">calendar_today</i>
+                <span>รอบเดือน</span>
+            </div>
+            <div class="tab-item" onclick="showTab('history')">
+                <i class="material-icons">history</i>
+                <span>ประวัติ</span>
+            </div>
         </div>
     </div>
 
