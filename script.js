@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sample period data - you'd replace this with real data from a backend or local storage
     const periodData = [
+        { start: new Date(2025, 11, 20), end: new Date(2025, 11, 25) }, /* สำหรับแก้ไขเดือน 0 คือเดือน Jan */
         { start: new Date(2025, 10, 17), end: new Date(2025, 10, 22) }, /* สำหรับแก้ไขเดือน 0 คือเดือน Jan */
         { start: new Date(2025, 9, 12), end: new Date(2025, 9, 17) }, /* สำหรับแก้ไขเดือน 0 คือเดือน Jan */
         { start: new Date(2025, 8, 7), end: new Date(2025, 8, 10) }, /* สำหรับแก้ไขเดือน 0 คือเดือน Jan */
